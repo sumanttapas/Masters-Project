@@ -1,0 +1,2 @@
+Lock: instructionsL: 3056090(Base)	Lock: 3037138
+Lockfree instructions: 2820870(Base)	LockFree: 2824375
