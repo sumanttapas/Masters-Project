@@ -1,0 +1,19 @@
+# started on Fri Dec  9 14:01:37 2016
+
+
+ Performance counter stats for './mylocks 8000' (10 runs):
+
+        141.462482      task-clock (msec)         #    0.996 CPUs utilized            ( +-  3.49% )
+                16      context-switches          #    0.110 K/sec                    ( +-  8.06% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+               121      page-faults               #    0.855 K/sec                    ( +-  0.43% )
+       391,493,185      cycles                    #    2.767 GHz                      ( +-  3.55% )  (82.22%)
+       292,243,818      stalled-cycles-frontend   #   74.65% frontend cycles idle     ( +-  4.73% )  (82.21%)
+        59,359,809      stalled-cycles-backend    #   15.16% backend  cycles idle     ( +-  2.67% )  (67.81%)
+       291,744,603      instructions              #    0.75  insns per cycle        
+                                                  #    1.00  stalled cycles per insn  ( +-  0.30% )  (84.93%)
+        33,280,069      branches                  #  235.257 M/sec                    ( +-  0.09% )  (85.03%)
+            15,832      branch-misses             #    0.05% of all branches          ( +- 12.71% )  (83.51%)
+
+       0.141974108 seconds time elapsed                                          ( +-  3.48% )
+

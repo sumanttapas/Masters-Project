@@ -1,0 +1,10 @@
+Time Seq lf=17
+Time Seq lf=13
+Time Seq lf=10
+Time Seq lf=9
+Time Seq lf=9
+Time Seq lf=12
+Time Seq lf=9
+Time Seq lf=10
+Time Seq lf=8
+Time Seq lf=14

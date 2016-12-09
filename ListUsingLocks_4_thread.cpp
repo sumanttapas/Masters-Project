@@ -13,7 +13,7 @@
 #include <limits>
 
 //#define debug
-//#define sequential
+#define sequential
 
 typedef struct node
 {

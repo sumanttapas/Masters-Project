@@ -1,0 +1,19 @@
+# started on Fri Dec  9 14:01:37 2016
+
+
+ Performance counter stats for './mylockfree 800' (10 runs):
+
+          4.662823      task-clock (msec)         #    0.931 CPUs utilized            ( +-  2.96% )
+                 1      context-switches          #    0.172 K/sec                    ( +- 36.32% )
+                 0      cpu-migrations            #    0.000 K/sec                  
+                93      page-faults               #    0.020 M/sec                    ( +-  0.66% )
+         4,527,656      cycles                    #    0.971 GHz                      ( +- 17.52% )  (68.91%)
+         5,251,472      stalled-cycles-frontend   #  115.99% frontend cycles idle     ( +-  2.06% )
+         1,387,669      stalled-cycles-backend    #   30.65% backend  cycles idle     ( +- 11.03% )
+         9,492,156      instructions              #    2.10  insns per cycle        
+                                                  #    0.55  stalled cycles per insn  ( +-  0.04% )
+         1,771,181      branches                  #  379.852 M/sec                    ( +-  0.04% )
+             7,333      branch-misses             #    0.41% of all branches          ( +- 19.35% )  (65.90%)
+
+       0.005005726 seconds time elapsed                                          ( +-  3.29% )
+

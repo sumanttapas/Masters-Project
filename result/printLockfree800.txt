@@ -1,0 +1,10 @@
+Time Seq lf=3055
+Time Seq lf=4146
+Time Seq lf=2846
+Time Seq lf=3212
+Time Seq lf=3573
+Time Seq lf=3284
+Time Seq lf=3217
+Time Seq lf=3331
+Time Seq lf=3423
+Time Seq lf=3237

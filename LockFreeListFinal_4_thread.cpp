@@ -19,7 +19,7 @@
 #define getNodeAddress(address) ((node_lf *)((uintptr_t)address & -4))
 
 //#define debug
-//#define sequential
+#define sequential
 
 
 typedef struct node
@@ -337,17 +337,15 @@ int main(int argc, char *argv[])
 	  exit(1);
 	}	
 	#endif
+	List mylist = list_init(); //initialize the list object. Can be called as constructor
+	mylist->head = mylist->init(); //initialize the list;
+	
+
+	#ifndef sequential
 	if(argc > 3)
 		printf("\nError! Pass 2 arguments");
 	threadlimit = std::stoi(argv[1]);
 	int numberOfThreads = std::stoi(argv[2]);
-	
-	
-	List mylist = list_init(); //initialize the list object. Can be called as constructor
-	mylist->head = mylist->init(); //initialize the list;
-	
-	#ifndef sequential
-	
 	
 	pthread_t * t = (pthread_t *)malloc(numberOfThreads*sizeof(pthread_t));
 	
@@ -394,7 +392,7 @@ int main(int argc, char *argv[])
 		mylist->insert(i, mylist->head);
 	
 	gettimeofday(&end, NULL);
-	printf("Time Seq=%ld\n", ((end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec)));
+	printf("Time Seq lf=%ld\n", ((end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec)));
 	
 	#endif
 	
