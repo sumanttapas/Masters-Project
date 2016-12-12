@@ -19,7 +19,7 @@
 #define getNodeAddress(address) ((node_lf *)((uintptr_t)address & -4))
 
 //#define debug
-#define sequential
+//#define sequential
 
 
 typedef struct node
