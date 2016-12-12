@@ -1,19 +1,19 @@
-# started on Fri Dec  9 14:01:37 2016
+# started on Fri Dec  9 15:54:17 2016
 
 
  Performance counter stats for './mylocks 1' (10 runs):
 
-          1.286613      task-clock (msec)         #    0.807 CPUs utilized            ( +-  7.50% )
-                 0      context-switches          #    0.389 K/sec                    ( +- 61.46% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                89      page-faults               #    0.069 M/sec                    ( +-  0.76% )
-         2,211,459      cycles                    #    1.719 GHz                      ( +-  9.72% )  (99.21%)
-         1,465,413      stalled-cycles-frontend   #   66.26% frontend cycles idle     ( +-  8.26% )
-         1,023,133      stalled-cycles-backend    #   46.27% backend  cycles idle     ( +-  7.07% )
-         2,377,147      instructions              #    1.07  insns per cycle        
-                                                  #    0.62  stalled cycles per insn  ( +-  0.29% )
-           417,394      branches                  #  324.413 M/sec                    ( +-  0.26% )
-             4,553      branch-misses             #    1.09% of all branches          ( +- 50.97% )  (30.14%)
+          2.201672 task-clock (msec)         #    0.831 CPUs utilized            ( +-  1.44% )
+                 0 context-switches          #    0.000 K/sec                  
+                 0 cpu-migrations            #    0.000 K/sec                  
+               350 page-faults               #    0.159 M/sec                  
+         2,627,360 cycles                    #    1.193 GHz                      ( +-  1.43% )
+         1,531,605 stalled-cycles-frontend   #   58.29% frontend cycles idle     ( +-  2.41% )
+   <not supported> stalled-cycles-backend  
+         2,652,278 instructions              #    1.01  insns per cycle        
+                                             #    0.58  stalled cycles per insn  ( +-  0.12% )
+           485,572 branches                  #  220.547 M/sec                    ( +-  0.10% )
+            13,589 branch-misses             #    2.80% of all branches          ( +-  1.69% )
 
-       0.001595184 seconds time elapsed                                          ( +-  8.38% )
+       0.002648563 seconds time elapsed                                          ( +-  1.56% )
 

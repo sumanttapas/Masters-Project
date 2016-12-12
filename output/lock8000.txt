@@ -1,19 +1,19 @@
-# started on Fri Dec  9 14:01:37 2016
+# started on Fri Dec  9 15:54:18 2016
 
 
  Performance counter stats for './mylocks 8000' (10 runs):
 
-        141.462482      task-clock (msec)         #    0.996 CPUs utilized            ( +-  3.49% )
-                16      context-switches          #    0.110 K/sec                    ( +-  8.06% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-               121      page-faults               #    0.855 K/sec                    ( +-  0.43% )
-       391,493,185      cycles                    #    2.767 GHz                      ( +-  3.55% )  (82.22%)
-       292,243,818      stalled-cycles-frontend   #   74.65% frontend cycles idle     ( +-  4.73% )  (82.21%)
-        59,359,809      stalled-cycles-backend    #   15.16% backend  cycles idle     ( +-  2.67% )  (67.81%)
-       291,744,603      instructions              #    0.75  insns per cycle        
-                                                  #    1.00  stalled cycles per insn  ( +-  0.30% )  (84.93%)
-        33,280,069      branches                  #  235.257 M/sec                    ( +-  0.09% )  (85.03%)
-            15,832      branch-misses             #    0.05% of all branches          ( +- 12.71% )  (83.51%)
+        148.300669 task-clock (msec)         #    0.997 CPUs utilized            ( +-  0.52% )
+                17 context-switches          #    0.112 K/sec                    ( +-  3.61% )
+                 0 cpu-migrations            #    0.000 K/sec                  
+               414 page-faults               #    0.003 M/sec                  
+       374,781,816 cycles                    #    2.527 GHz                      ( +-  0.05% )
+       308,350,056 stalled-cycles-frontend   #   82.27% frontend cycles idle     ( +-  0.06% )
+   <not supported> stalled-cycles-backend  
+       294,208,845 instructions              #    0.79  insns per cycle        
+                                             #    1.05  stalled cycles per insn  ( +-  0.00% )
+        33,205,515 branches                  #  223.907 M/sec                    ( +-  0.00% )
+            23,187 branch-misses             #    0.07% of all branches          ( +-  1.06% )
 
-       0.141974108 seconds time elapsed                                          ( +-  3.48% )
+       0.148731203 seconds time elapsed                                          ( +-  0.52% )
 

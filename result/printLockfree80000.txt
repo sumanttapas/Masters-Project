@@ -1,0 +1,10 @@
+Time Seq lf=16765191
+Time Seq lf=17039949
+Time Seq lf=16960678
+Time Seq lf=17301165
+Time Seq lf=17155969
+Time Seq lf=17424666
+Time Seq lf=16830976
+Time Seq lf=17259982
+Time Seq lf=17052911
+Time Seq lf=16929790

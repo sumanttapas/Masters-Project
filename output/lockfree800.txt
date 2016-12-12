@@ -1,19 +1,19 @@
-# started on Fri Dec  9 14:01:37 2016
+# started on Fri Dec  9 15:54:18 2016
 
 
  Performance counter stats for './mylockfree 800' (10 runs):
 
-          4.662823      task-clock (msec)         #    0.931 CPUs utilized            ( +-  2.96% )
-                 1      context-switches          #    0.172 K/sec                    ( +- 36.32% )
-                 0      cpu-migrations            #    0.000 K/sec                  
-                93      page-faults               #    0.020 M/sec                    ( +-  0.66% )
-         4,527,656      cycles                    #    0.971 GHz                      ( +- 17.52% )  (68.91%)
-         5,251,472      stalled-cycles-frontend   #  115.99% frontend cycles idle     ( +-  2.06% )
-         1,387,669      stalled-cycles-backend    #   30.65% backend  cycles idle     ( +- 11.03% )
-         9,492,156      instructions              #    2.10  insns per cycle        
-                                                  #    0.55  stalled cycles per insn  ( +-  0.04% )
-         1,771,181      branches                  #  379.852 M/sec                    ( +-  0.04% )
-             7,333      branch-misses             #    0.41% of all branches          ( +- 19.35% )  (65.90%)
+          4.408328 task-clock (msec)         #    0.933 CPUs utilized            ( +- 11.31% )
+                 1 context-switches          #    0.136 K/sec                    ( +- 27.22% )
+                 0 cpu-migrations            #    0.000 K/sec                  
+               358 page-faults               #    0.081 M/sec                  
+         8,255,970 cycles                    #    1.873 GHz                      ( +-  0.23% )
+         5,423,575 stalled-cycles-frontend   #   65.69% frontend cycles idle     ( +-  0.32% )
+   <not supported> stalled-cycles-backend  
+         9,735,768 instructions              #    1.18  insns per cycle        
+                                             #    0.56  stalled cycles per insn  ( +-  0.05% )
+         1,831,921 branches                  #  415.559 M/sec                    ( +-  0.05% )
+            14,492 branch-misses             #    0.79% of all branches          ( +-  1.58% )
 
-       0.005005726 seconds time elapsed                                          ( +-  3.29% )
+       0.004726911 seconds time elapsed                                          ( +- 11.08% )
 

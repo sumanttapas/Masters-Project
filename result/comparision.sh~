@@ -1,0 +1,9 @@
+#!/bin/bash
+for i in 1 800 8000 80000 800000
+do
+	echo lock
+	python3 median printLock$i.txt
+	echo lockfree
+	python3 median printLockfree$i.txt
+done
+	
