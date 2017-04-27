@@ -1,10 +1,10 @@
 CXX = g++
-CPPFLAGS := -std=c++11
+CPPFLAGS := -std=c++11 -g
 LDFLAGS := -pthread
 
 all:
 	$(CXX)  $(CPPFLAGS) $(LDFLAGS) ListUsingLocks_4_thread.cpp -o mylocks $(LIBS)
-	$(CXX)  $(CPPFLAGS) $(LDFLAGS) LockFreeListFinal_4_thread.cpp -o mylockfree $(LIBS)
+	$(CXX)  $(CPPFLAGS) $(LDFLAGS) LockFreeListFinal_4_thread_delete.cpp -o mylockfree $(LIBS)
 
 seq:
 	$(CXX)  $(CPPFLAGS) -Dsequential $(LDFLAGS) ListUsingLocks_4_thread.cpp -o mylocks $(LIBS)
@@ -12,7 +12,7 @@ seq:
 	
 debug:
 	$(CXX)  $(CPPFLAGS) -Ddebug $(LDFLAGS) ListUsingLocks_4_thread.cpp -o mylocks $(LIBS)
-	$(CXX)  $(CPPFLAGS) -Ddebug $(LDFLAGS) LockFreeListFinal_4_thread.cpp -o mylockfree $(LIBS)
+	$(CXX)  $(CPPFLAGS) -Ddebug $(LDFLAGS) LockFreeListFinal_4_thread_delete.cpp -o mylockfree $(LIBS)
 
 debugseq:
 	$(CXX)  $(CPPFLAGS) -Ddebug -Dsequential $(LDFLAGS) ListUsingLocks_4_thread.cpp -o mylocks $(LIBS)

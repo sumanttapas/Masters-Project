@@ -275,7 +275,9 @@ int delete_node(int k, node_lf * head)
 node_lf * init_LF_list()
 {
 	node_lf * head = (node_lf *)malloc(sizeof(node_lf));
+	#ifdef debug
 	printf("Value of Head:%p\n",head);
+	#endif
 	node_lf * tail = (node_lf *)malloc(sizeof(node_lf));
 	head->next = tail;
 	head->data = std::numeric_limits<int>::min();
@@ -332,6 +334,8 @@ struct arg
 
 
 void *thread1(void *);
+void * thread_delete(void * );
+void * thread_delete1(void * args);
 
 int threadlimit;
 int main(int argc, char *argv[])
@@ -353,12 +357,11 @@ int main(int argc, char *argv[])
 	if(argc > 3)
 		printf("\nError! Pass 2 arguments");
 	threadlimit = std::stoi(argv[1]);
-	int numberOfThreads = std::stoi(argv[2]);
+	int numberOfThreads = std::stoi(argv[2])+2;
 	
 	pthread_t * t = (pthread_t *)malloc(numberOfThreads*sizeof(pthread_t));
 	
 	struct arg * tArgs =(arg *)malloc(numberOfThreads*sizeof(arg));
-	
 	
 	#ifdef PerCouMon
 	SystemCounterState before_sstate = getSystemCounterState();
@@ -368,13 +371,27 @@ int main(int argc, char *argv[])
 	struct timeval start, end;
 	gettimeofday(&start, NULL);
 	int i;
-	for(i=0;i<numberOfThreads;i++)
+	for(i=0;i<numberOfThreads-2;i++)
 	{
 		tArgs[i].list = mylist;
 		tArgs[i].thread_id = i;
-		tArgs[i].tnum = numberOfThreads;
+		tArgs[i].tnum = numberOfThreads-2;
 		pthread_create (&t[i], NULL, thread1, (void *)&tArgs[i]);
 	}
+	#ifdef debug
+	for(i=0;i<20;i++){
+		//insert(i,mylist->head);
+	}
+	mylist->print(mylist->head);
+	#endif
+	tArgs[numberOfThreads-1].list = mylist;
+	tArgs[numberOfThreads-1].thread_id = i;
+	tArgs[numberOfThreads-1].tnum = numberOfThreads;
+	pthread_create (&t[numberOfThreads-1], NULL, thread_delete, (void *)&tArgs[numberOfThreads-2]);
+	tArgs[numberOfThreads-2].list = mylist;
+	tArgs[numberOfThreads-2].thread_id = i;
+	tArgs[numberOfThreads-2].tnum = numberOfThreads;
+	pthread_create (&t[numberOfThreads-2], NULL, thread_delete1, (void *)&tArgs[numberOfThreads-2]);
 	
 	
 	for(i=0;i<numberOfThreads;i++)
@@ -450,6 +467,16 @@ void * thread_delete(void * args)
 	unsigned int i;
 	
 	for(i=1; i < 10; i=i+1)
+	{
+		arguments->list->delete_node(i, arguments->list->head);
+	}
+}
+void * thread_delete1(void * args)
+{
+	struct arg * arguments = (struct arg *)args;
+	unsigned int i;
+	
+	for(i=10; i < 21; i=i+1)
 	{
 		arguments->list->delete_node(i, arguments->list->head);
 	}
