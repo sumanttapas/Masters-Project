@@ -2,9 +2,15 @@ CXX = g++
 CPPFLAGS := -std=c++11 -g
 LDFLAGS := -pthread
 
-all:
+program_NAME := mylockfree
+program_OBJS := LockFreeListFinal_4_thread.o testProgramIni.o
+
+
+all: $(program_NAME)
+
+$(program_NAME): $(program_OBJS)
 	$(CXX)  $(CPPFLAGS) $(LDFLAGS) ListUsingLocks_4_thread.cpp -o mylocks $(LIBS)
-	$(CXX)  $(CPPFLAGS) $(LDFLAGS) LockFreeListFinal_4_thread_delete.cpp -o mylockfree $(LIBS)
+	$(CXX)  $(CPPFLAGS) $(LDFLAGS) $(program_OBJS) -o $(program_NAME) $(LIBS)
 
 seq:
 	$(CXX)  $(CPPFLAGS) -Dsequential $(LDFLAGS) ListUsingLocks_4_thread.cpp -o mylocks $(LIBS)
