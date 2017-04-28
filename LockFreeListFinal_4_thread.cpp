@@ -24,7 +24,7 @@
 
 typedef struct node
 {
-	int data;
+	int key;
 	struct node * next;
 	struct node * backlink;
 }node_lf;
@@ -88,7 +88,7 @@ return_sf SearchFrom(int k,node_lf * curr)
 	
 	return_sf  s;// = (return_sf *)malloc(sizeof(return_sf));
 	node_lf * next = curr->next;
-	while(getNodeAddress(next)->data <= k)
+	while(getNodeAddress(next)->key <= k)
 	{
 		while(getMark(next) == 1 && (getMark(curr) == 0 || getNodeAddress(curr)->next != getNodeAddress(next)))
 		{
@@ -98,7 +98,7 @@ return_sf SearchFrom(int k,node_lf * curr)
 			}
 			next = getNodeAddress(curr)->next;
 		}
-		if(getNodeAddress(next)->data <= k)
+		if(getNodeAddress(next)->key <= k)
 		{
 			curr = next;
 			next = getNodeAddress(curr)->next;
@@ -146,10 +146,10 @@ int insert(int k, node_lf * head)
 	prev = s.current;
 	next = s.next;
 	//free(s);
-	if(getNodeAddress(prev)->data == k)
+	if(getNodeAddress(prev)->key == k)
 		return -1;
 	node_lf * newNode = (node_lf *)malloc(sizeof(node_lf));
-	newNode->data = k;
+	newNode->key = k;
 	while(1)
 	{
 		//printf("\nTrying to Insert: %d",k);
@@ -181,7 +181,7 @@ int insert(int k, node_lf * head)
 		s = SearchFrom(k,prev);
 		prev = s.current;
 		next = s.next;
-		if(getNodeAddress(s.current)->data == k)
+		if(getNodeAddress(s.current)->key == k)
 		{
 			free(newNode);
 			//free(s);
@@ -228,7 +228,7 @@ return_tf TryFlag(node_lf * prev, node_lf * target)
 			prev = getNodeAddress(prev)->backlink;
 	
 		
-		return_sf s = SearchFrom((getNodeAddress(target)->data) - EPSILON,  prev);
+		return_sf s = SearchFrom((getNodeAddress(target)->key) - EPSILON,  prev);
 		r.node = s.current;
 		r.prev_node = s.current;
 		r.del_node = s.next;
@@ -252,7 +252,7 @@ int delete_node(int k, node_lf * head)
 	return_sf s = SearchFrom(k - EPSILON,head);
 	node_lf * prev = s.current;
 	node_lf * del = s.next;
-	if(getNodeAddress(del)->data != k)
+	if(getNodeAddress(del)->key != k)
 		return -1;
 	return_tf tf = TryFlag(prev, del);
 	prev = tf.node;
@@ -278,22 +278,22 @@ node_lf * init_LF_list()
 	printf("Value of Head:%p\n",head);
 	node_lf * tail = (node_lf *)malloc(sizeof(node_lf));
 	head->next = tail;
-	head->data = std::numeric_limits<int>::min();
+	head->key = std::numeric_limits<int>::min();
 	tail->next = NULL;
-	tail->data = std::numeric_limits<int>::max();
+	tail->key = std::numeric_limits<int>::max();
 	return head;
 }
 
 void printlist(node_lf * head)
 {
 	printf("Value of Head:%p\n",head);
-	printf("Dereferernce of head:%d\n",head->data);
+	printf("Dereferernce of head:%d\n",head->key);
 	head = getNodeAddress(head)->next;
 	printf("Value of first element:%p\n",head);
-	printf("Dereferernce of head:%d\n",head->data);
-	while(getNodeAddress(head)->data != std::numeric_limits<int>::max())
+	printf("Dereferernce of head:%d\n",head->key);
+	while(getNodeAddress(head)->key != std::numeric_limits<int>::max())
 	{
-		printf("%d\t",getNodeAddress(head)->data);
+		printf("%d\t",getNodeAddress(head)->key);
 		head = head->next;
 	}
 	printf("\n");
